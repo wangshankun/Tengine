@@ -1,5 +1,9 @@
 # Tengine Overview
 
+**rk3399直接make -j6 编译即可**
+
+**增加res50的性能测试；Ubuntu18.04 libprotobuf.so默认库版本低，编译Tengine之前需要删除；**
+
 [![GitHub license](http://OAID.github.io/pics/apache_2.0.svg)](./LICENSE)
 
 **Tengine**, developed by **OPEN** AI LAB, is a lite, high-performance, and modular inference engine for embedded device.

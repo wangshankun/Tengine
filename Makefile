@@ -17,8 +17,9 @@ ifeq ($(CROSS_COMPILE),arm-linux-gnueabihf-)
    export PKG_CONFIG_PATH
 endif
 
-CC=$(CROSS_COMPILE)gcc -std=gnu99 $(SYSROOT_FLAGS)
-CXX=$(CROSS_COMPILE)g++ -std=c++11 $(SYSROOT_FLAGS)
+RK3399_EXTERN_FLAGS:=-march=armv8-a+fp+simd+crc+crypto -mtune=cortex-a72.cortex-a53 -funsafe-math-optimizations -O3
+CC=$(CROSS_COMPILE)gcc -std=gnu99  $(RK3399_EXTERN_FLAGS) $(SYSROOT_FLAGS)
+CXX=$(CROSS_COMPILE)g++ -std=c++11 $(RK3399_EXTERN_FLAGS) $(SYSROOT_FLAGS)
 LD=$(CROSS_COMPILE)g++ $(SYSROOT_FLAGS) $(SYSROOT_LDFLAGS)
 AR=$(CROSS_COMPILE)ar
 
